@@ -28,7 +28,7 @@ app.get('/', function(req, res) {
 	res.set("Pragma", "no-cache");
 	res.set("Expires", '0');
 
-  var file = FS.createReadStream(path.join(__dirname, './dist/index.html');
+  var file = FS.createReadStream(path.join(__dirname, './dist/index.html'));
 	file.pipe(res);
 });
 

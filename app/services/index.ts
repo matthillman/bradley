@@ -4,7 +4,7 @@ import angular = require('angular');
 
 var app = angular.module('sample.app');
 
-app.config(function($mdThemingProvider: angular.material.IThemingProvider, $mdIconProvider: angular.material.IIconProvider){
+app.config(/*@ngInject*/ function($mdThemingProvider: angular.material.IThemingProvider, $mdIconProvider: angular.material.IIconProvider) {
 	$mdIconProvider
 		.defaultIconSet("./assets/svg/avatars.svg", 128)
 		.icon("menu"       , "./assets/svg/menu.svg"        , 24)
@@ -21,3 +21,6 @@ app.config(function($mdThemingProvider: angular.material.IThemingProvider, $mdIc
 });
 import US = require('./UserService');
 app.service('userService', US.UserServiceFactory);
+
+import Bradley = require('./Bradley');
+app.service('Bradley', Bradley.BradleyServiceFactory);

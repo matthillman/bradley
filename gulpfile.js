@@ -40,7 +40,8 @@ gulp.task('browserify', ['compile'], function () {
 		.pipe(ngAnnotate());
 
 	if (global.DEBUG) { stream.pipe(sourcemaps.init({ loadMaps: true })); }
-	stream.pipe(uglify())
+	stream
+		.pipe(uglify())
 		.on('error', gutil.log)
 	if (global.DEBUG) { stream.pipe(sourcemaps.write()); }
 	return stream.pipe(gulp.dest('./dist/'));

@@ -1,14 +1,17 @@
 'use strict';
+/// <reference path="../../typing/tsd.d.ts" />
 
 import angular = require('angular');
 require('angular-material')
 import US = require('../services/UserService');
-
 import UserService = US.UserService;
 import User = US.User
+import BS = require('../services/Bradley');
+import BradleyService = BS.BradleyService;
+import BirthStage = BS.BirthStage;
 
 // @ngInject
-export function UserController($scope: UserScope, userService: UserService, $mdSidenav: angular.material.ISidenavService, $mdBottomSheet: angular.material.IBottomSheetService, $log: angular.ILogService, $q: angular.IQService) {
+export function UserController($scope: UserScope, userService: UserService, $mdSidenav: angular.material.ISidenavService, $mdBottomSheet: angular.material.IBottomSheetService, $log: angular.ILogService, $q: angular.IQService, Bradley: BradleyService) {
     $scope.selected     = null;
     $scope.users = [ ];
     $scope.selectUser  = selectUser;
@@ -26,6 +29,10 @@ export function UserController($scope: UserScope, userService: UserService, $mdS
             $scope.users    = [].concat(users);
             $scope.selected = users[0];
           });
+
+    Bradley.getBirthProgression().then(function(progression) {
+        console.log(progression);
+    });
 
     // *********************************
     // Internal methods
