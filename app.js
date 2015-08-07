@@ -6,16 +6,13 @@ var FS = require('fs');
 
 var app = express();
 
-var mainTemplate;
-
-mainTemplate = FS.readFileSync(path.join(__dirname, './dist/views/index.html'), {});
-
 // uncomment after placing your favicon in /public
 //app.use(favicon(path.join(__dirname, 'public', 'favicon.ico')));
 app.use(logger('dev'));
 app.use('/vendor', express.static(path.join(__dirname, './node_modules')));
 app.use('/assets', express.static(path.join(__dirname, './dist/assets')));
 app.use('/app', express.static(path.join(__dirname, './dist')));
+app.use('/main.js', express.static(path.join(__dirname, './dist/main.js')));
 
 app.use('/views/partials/:file', function(req, res) {
   FS.readFile(path.join(__dirname, './dist/views/partials/' + req.params.file), function(err, fileContent) {
@@ -31,7 +28,8 @@ app.get('/', function(req, res) {
 	res.set("Pragma", "no-cache");
 	res.set("Expires", '0');
 
-	res.send(mainTemplate);
+  var file = FS.createReadStream(path.join(__dirname, './dist/index.html');
+	file.pipe(res);
 });
 
 // catch 404 and forward to error handler

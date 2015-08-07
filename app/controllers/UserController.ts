@@ -7,6 +7,7 @@ import US = require('../services/UserService');
 import UserService = US.UserService;
 import User = US.User
 
+// @ngInject
 export function UserController($scope: UserScope, userService: UserService, $mdSidenav: angular.material.ISidenavService, $mdBottomSheet: angular.material.IBottomSheetService, $log: angular.ILogService, $q: angular.IQService) {
     $scope.selected     = null;
     $scope.users = [ ];
@@ -62,7 +63,7 @@ export function UserController($scope: UserScope, userService: UserService, $mdS
 
         bottomSheetPromise = $mdBottomSheet.show({
           parent: angular.element(document.getElementById('content')),
-          templateUrl: '/views/partials/contactSheet.html',
+          templateUrl: 'views/partials/contactSheet.html',
           controller: ContactPanelController,
           controllerAs: "cp",
           bindToController : true,
@@ -74,7 +75,9 @@ export function UserController($scope: UserScope, userService: UserService, $mdS
         return bottomSheetPromise;
 
         /**
-         * Bottom Sheet controller for the Avatar Actions
+         *  Bottom Sheet controller for the Avatar Actions
+         *
+         *  @ngInject
          */
         function ContactPanelController( $mdBottomSheet: angular.material.IBottomSheetService ) {
           this.user = user;

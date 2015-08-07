@@ -12,6 +12,7 @@ export interface User {
     content: string;
 }
 
+// @ngInject
 export function UserServiceFactory($q: angular.IQService): UserService {
 	 var users = [
       {

@@ -1,0 +1,17 @@
+{
+	"node": true,
+    "browser": true,
+    "curly": true,
+    "immed": true,
+    "latedef": false,
+    "newcap": true,
+    "noarg": true,
+    "undef": true,
+    "unused": true,
+    "strict": true,
+    "trailing": true,
+    "smarttabs": true,
+    "plusplus": false,
+	"eqeqeq": true,
+    "laxbreak": true
+}
