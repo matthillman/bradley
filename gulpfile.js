@@ -11,7 +11,6 @@ var minifyCss = require('gulp-minify-css');
 var run = require('gulp-run');
 
 var tsconfig = ts.createProject('tsconfig.json', { sortOutput: true });
-global.DEBUG = true;
 
 gulp.task('compile', function () {
 	return gulp.src(['typings/**/*.d.ts', 'app/**/*.ts'])
@@ -51,6 +50,10 @@ gulp.task('copy-source', ['browserify', 'minify-css'], function () {
 	return gulp.src(['./dist/**/*']).pipe(gulp.dest('../gh-pages/'))
 });
 
+gulp.task('debug', function() {
+	global.DEBUG = false;
+});
+
 gulp.task('production', function() {
 	global.DEBUG = false;
 });
@@ -59,4 +62,4 @@ gulp.task('publish', ['production', 'copy-source'], function () {
 	return run('pushd ../gh-pages && git add --all . && git commit -a -m "Gulp publish" && git push origin HEAD && popd').exec();
 })
 
-gulp.task('default', ['browserify']);
+gulp.task('default', ['debug', 'minify-css', 'browserify']);
