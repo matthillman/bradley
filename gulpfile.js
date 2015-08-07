@@ -17,10 +17,6 @@ gulp.task('compile', function () {
 });
 
 gulp.task('browserify', ['compile'], function() {
-    // return gulp.src('src/app.js')
-    //     .pipe(ngAnnotate())
-    //     .pipe(gulp.dest('dist'));
-
 	var b = browserify({
 		entries: ['./build/main.js'],
 		debug: true
@@ -30,10 +26,13 @@ gulp.task('browserify', ['compile'], function() {
     .pipe(source('main.js'))
     .pipe(buffer())
 	.pipe(ngAnnotate())
-	// .pipe(uglify())
+	.pipe(uglify())
 	.on('error', gutil.log)
     .pipe(gulp.dest('./dist/'));
 });
 
+gulp.task('publish', ['browserify'], function() {
+	return gulp.src(['./dist/**/*']).pipe(gulp.dest('../gh-pages/'))
+});
 
 gulp.task('default', ['browserify']);
