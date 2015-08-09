@@ -2,7 +2,7 @@
 <html lang="en">
 
 <head>
-  <title>Angular Material - Starter App</title>
+  <title>Overview of Labor and Birth—Overview of Labor and Birth</title>
 
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -20,7 +20,7 @@
 <body layout="column" ng-controller="UserController">
 
   <md-toolbar layout="row" class="md-whiteframe-z1" style="z-index: 1000" layout-align="center center">
-    <md-button class="menu hamburger" hide-gt-sm ng-click="toggleList()" aria-label="Show User List" ng-class="{'open': isSidenavOpen()}">
+    <md-button class="menu hamburger" hide-gt-sm ng-click="toggleList($event)" aria-label="Show User List" ng-class="{'open': isSidenavOpen()}">
       <div flex layout="row" layout-align="center center">
         <div></div>
       </div>
@@ -35,7 +35,7 @@
         <ul class="stages-menu">
           <li ng-repeat="section in menu" class="parent-list-item {{section.className || ''}}" ng-class="{'parentActive' : isSectionSelected(section), 'no-top': section.type === 'heading'}">
             <md-subheader class="menu-heading md-no-sticky" ng-if="section.type === 'heading'" id="heading_{{ section.name | nospace }}">{{section.name}}</md-subheader>
-            <menu-link section="section" ng-if="section.type.value === 'link'" flex></menu-link>
+            <menu-link class="menu-top" section="section" ng-if="section.type.value === 'link'" flex text-style-subhead layout="row" layout-align="center center" layout-fill></menu-link>
             <toggle-menu section="section" ng-if="section.type.value === 'toggle'"></toggle-menu>
 
             <ul ng-if="section.children" class="menu-nested-list">
@@ -48,8 +48,9 @@
         </ul>
       </md-content>
     </md-sidenav>
-
-    <div flex layout="column" tabIndex="-1" role="main" class="md-whiteframe-z2" ng-view></div>
+    <md-content flex class="md-whiteframe-z2 stage-content" layout="column" tabIndex="-1" role="main">
+      <div layout="column" ng-view></div>
+    </md-content>
   </div>
 
   <script src="main.js"></script>
