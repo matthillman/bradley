@@ -1,0 +1,17 @@
+<md-subheader><md-button layout-fill
+  ng-click="toggle()"
+  aria-controls="stages-menu-{{section.name | nospace}}"
+  aria-expanded="{{isOpen()}}">
+  <div flex layout-fill layout="row" layout-align="space-between center">
+    <span aria-hidden="true" class="md-toggle-icon" ng-class="{'toggled' : isOpen()}" layout="column" layout-alignment="center center">
+      <md-icon md-svg-icon="arrow" class="right" ng-class="{'down' : isOpen(), 'right': !isOpen()}"></md-icon>
+    </span>
+    <span flex text-style-subhead>{{section.name}}</span>
+  </div>
+</md-button></md-subheader>
+
+<md-list  id="stages-menu-{{section.name | nospace}}" class="menu-toggle-list">
+  <md-list-item ng-repeat="page in section.pages">
+    <menu-link section="page" flex></menu-link>
+  </md-list-item>
+</md-list>
