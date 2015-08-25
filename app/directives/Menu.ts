@@ -17,14 +17,14 @@ interface ToggleScope extends angular.IScope {
 
 interface LinkScope extends angular.IScope {
 	section: MenuPage;
+
 	isSelected(): boolean;
 }
 
 export interface MenuSection extends MenuPage {
-	pages?: MenuPage[];
-	type: MenuSectionType;
-
 	children?: MenuSection[];
+	type: MenuSectionType;
+	pages?: MenuPage[];
 }
 
 export class MenuSectionType {
@@ -96,7 +96,6 @@ function ToggleMenuFactory($timeout: angular.ITimeoutService) {
 }
 
 /**
- *
  * @ngInject
  */
 function MenuLinkFactory() {

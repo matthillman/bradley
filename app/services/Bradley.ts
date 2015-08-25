@@ -12,25 +12,25 @@ export interface BradleyService {
 }
 
 export interface Stage {
-	stages: { [key: string]: BirthStage };
-	selectSection(section: MenuSection): void;
-	toggleSelectSection(section: MenuSection): void;
-	isSectionSelected(section: MenuSection): boolean;
 	selectPage(section: MenuSection, page: MenuPage): void;
+	isSectionSelected(section: MenuSection): boolean;
+	toggleSelectSection(section: MenuSection): void;
+	selectSection(section: MenuSection): void;
 	isPageSelected(page:  MenuPage): boolean;
+	stages: { [key: string]: BirthStage };
 }
 
 export interface BirthStage {
-	order: number;
-	url: string;
-	name: string;
 	emotionalSigns: string;
-	behavior: string;
 	physicalSigns: string;
 	contractions: string;
 	sensations: string;
-	needs: string;
 	reminders: string;
+	behavior: string;
+	order: number;
+	needs: string;
+	name: string;
+	url: string;
 }
 
 interface HttpErrorResponseData {
@@ -40,9 +40,9 @@ interface HttpErrorResponseData {
 // @ngInject
 export function BradleyServiceFactory($http: angular.IHttpService, $q: angular.IQService): BradleyService {
 	var stages: { [key: string]: BirthStage } = {};
+	var currentSection: MenuSection;
 	var openSection: MenuSection;
 	var currentPage:  MenuPage;
-	var currentSection: MenuSection;
 
 	return {
 		getStages: loadBirthStages

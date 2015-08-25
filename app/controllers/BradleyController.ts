@@ -1,32 +1,29 @@
 /// <reference path="../../typings/tsd.d.ts" />
 'use strict';
 
-import angular = require('angular');
-require('angular-material')
-require('angular-route')
-import US = require('../services/UserService');
-import UserService = US.UserService;
-import User = US.User
+import Menu = require('../directives/Menu');
 import BS = require('../services/Bradley');
+import angular = require('angular');
+require('angular-material');
+require('angular-route');
+
 import BradleyService = BS.BradleyService;
 import BirthStage = BS.BirthStage;
 
-import Menu = require('../directives/Menu');
-
 interface MainRouteParams extends angular.route.IRouteParamsService {
-    stage?: string;
     progression?: string;
+    stage?: string;
 }
 
 // @ngInject
 export function BradleyController(
     $scope: MainScope,
-    $mdSidenav: angular.material.ISidenavService,
-    Bradley: BradleyService,
-    $location: angular.ILocationService,
-    $rootScope: angular.IRootScopeService,
-    $timeout: angular.ITimeoutService,
     $routeParams: MainRouteParams,
+    $mdSidenav: angular.material.ISidenavService,
+    $rootScope: angular.IRootScopeService,
+    $location: angular.ILocationService,
+    $timeout: angular.ITimeoutService,
+    Bradley: BradleyService,
     $log: angular.ILogService
     ) {
     $scope.isSidenavOpen = function() {

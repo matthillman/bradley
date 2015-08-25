@@ -1,0 +1,55 @@
+.hamburger {
+	position: absolute;
+	top: 6px;
+	margin: 0;
+	width: 48px;
+	height: 48px;
+	min-width: 0;
+	padding-left: 0;
+	padding-right: 0;
+	line-height: 48px;
+	border-radius: 50%;
+
+	& > div:first-of-type > div {
+		-webkit-transition-property: background-color;
+		transition-property: background-color;
+
+		&,
+		&::before,
+		&::after {
+			width: 20px;
+			height: 2px;
+			transition-duration: $transition-time;
+			transition-timing-function: $bounce-curve;
+			background-color: rgba(255, 255, 255, 0.87);
+		}
+
+		&::before,
+		&::after {
+			content: "";
+			display: block;
+			position: relative;
+			transition-property: transform;
+		}
+
+		&::before {
+			top: -7px;
+		}
+
+		&::after {
+			top: 5px;
+		}
+	}
+
+	&.open > div:first-of-type > div {
+		background-color: rgba(255, 255, 255, 0) !important;
+
+		&::before {
+			transform: translateY(7px) rotate(135deg);
+		}
+
+		&::after {
+			transform: translateY(-7px) rotate(-135deg);
+		}
+	}
+}

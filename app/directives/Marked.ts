@@ -22,7 +22,6 @@ function MarkedFactory($log: angular.ILogService) {
 		link: function($scope: MarkedScope, $element: angular.IAugmentedJQuery) {
 			$scope.$watch('marked', function(newVal: string, oldVal: string) {
 				if (newVal !== oldVal) {
-					$log.debug('calling marked with ', (newVal || ''));
 					$element.html(marked(newVal || ''));
 				}
 			});
