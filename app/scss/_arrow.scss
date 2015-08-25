@@ -1,0 +1,52 @@
+
+$initalRotation: -45;
+
+[arrow-icon] {
+	transition: transform $transition-time $bounce-curve;
+	display: block;
+	width: 8px;
+	height: 8px;
+	margin-left: 8px;
+	margin-right: 8px;
+	border: none;
+	border-top: 1px solid $primaryGrayColor;
+	border-left: 1px solid $primaryGrayColor;
+	transform: rotate(#{$initalRotation}deg);
+}
+
+[arrow-icon].left {
+	$rotation: $initalRotation + 0;
+	transform: rotate(#{$rotation}deg);
+}
+
+[arrow-icon].right {
+	$rotation: $initalRotation + 180;
+	transform: rotate(#{$rotation}deg);
+}
+
+/*
+use this class instead of right if you are animating and:
+	1: you used alt-down
+	2: you are are going to/from left and you want the rotation to pass
+	   through 6 o'clock instead of 12 o'clock
+ */
+[arrow-icon].alt-right {
+	$rotation: $initalRotation - 180;
+	transform: rotate(#{$rotation}deg);
+}
+
+/*use this class instead of down if you need to animate from left to down*/
+[arrow-icon].alt-down {
+	$rotation: $initalRotation - 90;
+	transform: rotate(#{$rotation}deg);
+}
+
+[arrow-icon].down {
+	$rotation: $initalRotation + 270;
+	transform: rotate(#{$rotation}deg);
+}
+
+[arrow-icon].up {
+	$rotation: $initalRotation + 90;
+	transform: rotate(#{$rotation}deg);
+}

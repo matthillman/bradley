@@ -1,59 +1,62 @@
-{
-	"stages": [
-		{
-			"order": 1,
-			"name": "Early First Stage",
-			"emotionalSigns": "First emotional signpost: **Excitement**. “Maybe this is it! …But then I’m not sure”.",
-			"behavior": "“Putsy–Putsy”. Anxiously cleaning, talking, walking, smiling. Walking is important. Many mothers feel restless and need to walk. She may or may not want to move or talk during contractions. She may be hungry.",
-			"physicalSigns": "She may have bloody show (mucus plug, spotting of blood–tinged mucus or mucus discharge), runny nose, several bowel movements, need to urinate frequently. Note: if heavy bleeding occurs, call birth attendant.",
-			"contractions": "Generally 10 minutes apart or less, lasting 45–60 seconds and becoming progressively stronger and closer together. Generally do not get further apart from changing activity.",
-			"sensations": "Strong contractions that peak at about 30 seconds. Possible pressure or cramping feeling. It generally feels better to walk around and keep busy. She may notice many changes in her body during this time.",
-			"needs": "Keep busy and don’t become too excited. This may or may not be actual labor. Have someone with you. Eat if hungry, drink often, get some rest if at all possible.",
-			"reminders": "Walking helps to open the inlet of the pelvis. Adrenaline can slow or stop the labor. If labor stops, don’t get discouraged. Rest, eat and go on. This happens often."
-		},
-		{
-			"order": 2,
-			"name": "First Stage",
-			"emotionalSigns": "**Acceptance**. “This is it”. Confident and committed. “This is a lot of work, but I can do it”.",
-			"behavior": "Tries various positions and techniques to find what works best and is most comfortable for her. Walking is still important. Looks as if she is working hard but usually prefers to keep busy between contractions.",
-			"physicalSigns": "May be hungry depending on how long the labor has been. May be able to talk and/or move during contractions, but it is an effort. She feels many changes occurring in her body and is settling into a pattern.",
-			"contractions": "Contractions are becoming stronger and more frequent. Generally five minutes apart or less, lasting around 60 seconds.",
-			"sensations": "Increasing pressure and fullness in pelvis, backache, cramping feeling across lower back or as menstrual cramps. May feel stretching in pelvis with sore pubic bone. Pelvic rocks may help.",
-			"needs": "Support and reassurance. She should not be separated from her coach from now on. Freedom of movement, plenty of space and fresh air are often important. Timing contractions may help.",
-			"reminders": "Conserve your energy! You don’t know how long you will be in labor. It is often good to do something fun and entertaining to help pass the time between contractions."
-		},
-		{
-			"order": 3,
-			"name": "Late First Stage (Hard Labor)",
-			"emotionalSigns": "Second emotional signpost: **Seriousness**. The “do-not-disturb” and “get to work” attitudes.",
-			"behavior": "Losing modesty. May still need to walk, but uses slow, deliberate movements. May need to lie down. Appearance of sleep, deeply concentrating. may like sitting on the toilet.",
-			"physicalSigns": "No longer hungry. No longer talkative, even between contractions. She may be sweating, bag of waters may break, she becomes uncomfortable if disturbed, tenses up, or needs to urinate.",
-			"contractions": "Intense and close, sometimes one on top of another. Generally (but not always) follow a regular pattern and last 60 seconds or more. May put pressure on bladder causing need to urinate during contractions.",
-			"sensations": "Hard work; intense, almost overwhelming. You lose track of time. You must concentrate on staying relaxed—tensing up causes pain.",
-			"needs": "Dim lights, comfortable temperature, freedom to move around, peaceful environment, drink and go to the bathroom often. It is important to “give in” and allow the labor to take over.",
-			"reminders": "This is it! You are doing it! Relaxation is the key. Remember the natural alignment plateau. Labor is much more than mere dilation. Be patient; you and your baby need this time."
-		},
-		{
-			"order": 4,
-			"name": "Transition",
-			"emotionalSigns": "Third emotional signpost: **Self–Doubt** “This is so hard. I’m so tired. I can’t take any more. I give up”. **Surrender**",
-			"behavior": "Confused, unsure, scared, nervous, may want to go home, may move around a lot, may give up, may yell at you, may be handling things fine.",
-			"physicalSigns": "May be sweaty, shaky, hot then cold, nauseous, may vomit, burp, have cold feet. Bag of waters may break if it hasn’t yet",
-			"contractions": "May become irregular, may double peak, may stop completely for a while.",
-			"sensations": "Sensations change greatly often causing panic, disbelief and fear. You may feel the baby shifting into alignment with pelvis; a lot of pressure down low. This may be the hardest part. It will soon be time to hold your baby.",
-			"needs": "Reassurance, encouragement, good coaching, various relaxation techniques. Do Not Disturb! Take one contraction at a time. Avoid drugs; the hard part is almost over.",
-			"reminders": "Remember: Transition may be the hardest part, but it doesn’t last long. The baby is coming soon. Your baby is counting on you!"
-		},
-		{
-			"order": 5,
-			"name": "Second Stage",
-			"emotionalSigns": "**Calmness** and **Determination**. Desire to complete the task. “I want to hold my baby”.",
-			"behavior": "No longer modest. Either gradually or suddenly gets urge to push. Usually more alert and may become more talkative between contractions. May be very tired and might sleep between contractions.",
-			"physicalSigns": "Mucus discharge and some bloody discharge, bag of waters may break if not broken. If it breaks during a contractions, water may burst all over the place. She seems to have gotten a second wind.",
-			"contractions": "Change to expulsive type. May ease into stage by only pushing at peaks or get sudden urge to push. Usually more time between contractions now.",
-			"sensations": "Wait for overwhelming need to bear down. Generally feels better to push and it hurts if you don’t. Feels sort of like having a huge bowel movement. Most mothers feel a stretching and burning feeling which builds to a tremendous release as baby is born.",
-			"needs": "Encouragement and freedom to choose best position. May need a quick lesson in how to push. Everyone do as mother asks. Give her ice chips or water and remind her to completely relax between contractions.",
-			"reminders": "There are many pushing positions. Squatting and classic are most efficient. Push to point of comfort, hold breath only as comfortable. This stage can last a few minutes or many hours. Happy Birthday!"
-		}
-	]
-}
+[
+	{
+		"order": 1,
+		"url": "early-first-stage",
+		"name": "Early First Stage",
+		"emotionalSigns": "First emotional signpost: **Excitement**. “Maybe this is it! …But then I’m not sure”.",
+		"behavior": "“Putsy–Putsy”. Anxiously cleaning, talking, walking, smiling. Walking is important. Many mothers feel restless and need to walk. She may or may not want to move or talk during contractions. She may be hungry.",
+		"physicalSigns": "She may have bloody show (mucus plug, spotting of blood–tinged mucus or mucus discharge), runny nose, several bowel movements, need to urinate frequently. Note: if heavy bleeding occurs, call birth attendant.",
+		"contractions": "Generally 10 minutes apart or less, lasting 45–60 seconds and becoming progressively stronger and closer together. Generally do not get further apart from changing activity.",
+		"sensations": "Strong contractions that peak at about 30 seconds. Possible pressure or cramping feeling. It generally feels better to walk around and keep busy. She may notice many changes in her body during this time.",
+		"needs": "Keep busy and don’t become too excited. This may or may not be actual labor. Have someone with you. Eat if hungry, drink often, get some rest if at all possible.",
+		"reminders": "Walking helps to open the inlet of the pelvis. Adrenaline can slow or stop the labor. If labor stops, don’t get discouraged. Rest, eat and go on. This happens often."
+	},
+	{
+		"order": 2,
+		"url": "first-stage",
+		"name": "First Stage",
+		"emotionalSigns": "**Acceptance**. “This is it”. Confident and committed. “This is a lot of work, but I can do it”.",
+		"behavior": "Tries various positions and techniques to find what works best and is most comfortable for her. Walking is still important. Looks as if she is working hard but usually prefers to keep busy between contractions.",
+		"physicalSigns": "May be hungry depending on how long the labor has been. May be able to talk and/or move during contractions, but it is an effort. She feels many changes occurring in her body and is settling into a pattern.",
+		"contractions": "Contractions are becoming stronger and more frequent. Generally five minutes apart or less, lasting around 60 seconds.",
+		"sensations": "Increasing pressure and fullness in pelvis, backache, cramping feeling across lower back or as menstrual cramps. May feel stretching in pelvis with sore pubic bone. Pelvic rocks may help.",
+		"needs": "Support and reassurance. She should not be separated from her coach from now on. Freedom of movement, plenty of space and fresh air are often important. Timing contractions may help.",
+		"reminders": "Conserve your energy! You don’t know how long you will be in labor. It is often good to do something fun and entertaining to help pass the time between contractions."
+	},
+	{
+		"order": 3,
+		"url": "late-first-stage",
+		"name": "Late First Stage (Hard Labor)",
+		"emotionalSigns": "Second emotional signpost: **Seriousness**. The “do-not-disturb” and “get to work” attitudes.",
+		"behavior": "Losing modesty. May still need to walk, but uses slow, deliberate movements. May need to lie down. Appearance of sleep, deeply concentrating. may like sitting on the toilet.",
+		"physicalSigns": "No longer hungry. No longer talkative, even between contractions. She may be sweating, bag of waters may break, she becomes uncomfortable if disturbed, tenses up, or needs to urinate.",
+		"contractions": "Intense and close, sometimes one on top of another. Generally (but not always) follow a regular pattern and last 60 seconds or more. May put pressure on bladder causing need to urinate during contractions.",
+		"sensations": "Hard work; intense, almost overwhelming. You lose track of time. You must concentrate on staying relaxed—tensing up causes pain.",
+		"needs": "Dim lights, comfortable temperature, freedom to move around, peaceful environment, drink and go to the bathroom often. It is important to “give in” and allow the labor to take over.",
+		"reminders": "This is it! You are doing it! Relaxation is the key. Remember the natural alignment plateau. Labor is much more than mere dilation. Be patient; you and your baby need this time."
+	},
+	{
+		"order": 4,
+		"name": "Transition",
+		"url": "transition",
+		"emotionalSigns": "Third emotional signpost: **Self–Doubt** “This is so hard. I’m so tired. I can’t take any more. I give up”. **Surrender**",
+		"behavior": "Confused, unsure, scared, nervous, may want to go home, may move around a lot, may give up, may yell at you, may be handling things fine.",
+		"physicalSigns": "May be sweaty, shaky, hot then cold, nauseous, may vomit, burp, have cold feet. Bag of waters may break if it hasn’t yet",
+		"contractions": "May become irregular, may double peak, may stop completely for a while.",
+		"sensations": "Sensations change greatly often causing panic, disbelief and fear. You may feel the baby shifting into alignment with pelvis; a lot of pressure down low. This may be the hardest part. It will soon be time to hold your baby.",
+		"needs": "Reassurance, encouragement, good coaching, various relaxation techniques. Do Not Disturb! Take one contraction at a time. Avoid drugs; the hard part is almost over.",
+		"reminders": "Remember: Transition may be the hardest part, but it doesn’t last long. The baby is coming soon. Your baby is counting on you!"
+	},
+	{
+		"order": 5,
+		"name": "Second Stage",
+		"url": "second-stage",
+		"emotionalSigns": "**Calmness** and **Determination**. Desire to complete the task. “I want to hold my baby”.",
+		"behavior": "No longer modest. Either gradually or suddenly gets urge to push. Usually more alert and may become more talkative between contractions. May be very tired and might sleep between contractions.",
+		"physicalSigns": "Mucus discharge and some bloody discharge, bag of waters may break if not broken. If it breaks during a contractions, water may burst all over the place. She seems to have gotten a second wind.",
+		"contractions": "Change to expulsive type. May ease into stage by only pushing at peaks or get sudden urge to push. Usually more time between contractions now.",
+		"sensations": "Wait for overwhelming need to bear down. Generally feels better to push and it hurts if you don’t. Feels sort of like having a huge bowel movement. Most mothers feel a stretching and burning feeling which builds to a tremendous release as baby is born.",
+		"needs": "Encouragement and freedom to choose best position. May need a quick lesson in how to push. Everyone do as mother asks. Give her ice chips or water and remind her to completely relax between contractions.",
+		"reminders": "There are many pushing positions. Squatting and classic are most efficient. Push to point of comfort, hold breath only as comfortable. This stage can last a few minutes or many hours. Happy Birthday!"
+	}
+]

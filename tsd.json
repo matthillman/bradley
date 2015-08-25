@@ -37,6 +37,12 @@
     },
     "q/Q.d.ts": {
       "commit": "a95ee80de0d4a56b7c5fc82ca19145fc239e76f4"
+    },
+    "angularjs/angular-route.d.ts": {
+      "commit": "8de599097a8acb3c246f9cc152f07b323c5a8b49"
+    },
+    "marked/marked.d.ts": {
+      "commit": "3b0f362204ea965952dafdb682a5274d527ef9d0"
     }
   }
 }

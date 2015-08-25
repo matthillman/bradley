@@ -2,7 +2,7 @@
 
 import angular = require('angular');
 
-var app = angular.module('sample.app');
+var app = angular.module('bradley.birth');
 
-import UC = require('./UserController');
-app.controller('UserController', UC.UserController);
+import UC = require('./BradleyController');
+app.controller('BradleyController', UC.BradleyController);

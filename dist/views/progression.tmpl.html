@@ -1,0 +1,9 @@
+
+<md-list>
+        <md-list-item ng-repeat="birthStage in stage.stages" layout="column" layout-align="start start">
+                <md-subheader>
+                        <div text-style-title2>{{birthStage.name}}</div>
+                </md-subheader>
+                <p text-style-body marked="birthStage[selected.key]"></p>
+        </md-list-item>
+</md-list>

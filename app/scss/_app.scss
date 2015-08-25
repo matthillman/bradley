@@ -240,48 +240,6 @@ md-toolbar md-input-container:not(.md-input-invliad).md-input-focused md-icon {
 	color: rgba(255, 255, 255, 0.87);
 }
 
-md-icon[md-svg-icon=arrow] {
-	-webkit-transition: transform 0.25s cubic-bezier(.4, -0.6, .6, 1.4);
-	transition: transform 0.25s cubic-bezier(.4, -0.6, .6, 1.4);
-}
-
-md-icon[md-svg-icon=arrow].left {
-	-webkit-transform: rotate(0deg);
-	transform: rotate(0deg);
-}
-
-md-icon[md-svg-icon=arrow].right {
-	-webkit-transform: rotate(180deg);
-	transform: rotate(180deg);
-}
-
-/*
-use this class instead of right if you are animating and:
-	1: you used alt-down
-	2: you are are going to/from left and you want the rotation to pass
-	   through 6 o'clock instead of 12 o'clock
- */
-md-icon[md-svg-icon=arrow].alt-right {
-	-webkit-transform: rotate(-180deg);
-	transform: rotate(-180deg);
-}
-
-/*use this class instead of down if you need to animate from left to down*/
-md-icon[md-svg-icon=arrow].alt-down {
-	-webkit-transform: rotate(-90deg);
-	transform: rotate(-90deg);
-}
-
-md-icon[md-svg-icon=arrow].down {
-	-webkit-transform: rotate(270deg);
-	transform: rotate(270deg);
-}
-
-md-icon[md-svg-icon=arrow].up {
-	-webkit-transform: rotate(90deg);
-	transform: rotate(90deg);
-}
-
 .stages-menu,
 .stages-menu ul {
   list-style: none;

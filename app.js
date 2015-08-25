@@ -21,6 +21,13 @@ app.use('/views/partials/:file', function(req, res) {
   });
 });
 
+app.use('/views/:file', function(req, res) {
+  FS.readFile(path.join(__dirname, './dist/views/' + req.params.file), function(err, fileContent) {
+    console.log(err);
+    res.send(fileContent);
+  });
+});
+
 app.get('/', function(req, res) {
 	res.set('X-UA-Compatible', 'IE=edge'); /*as if*/
 	res.set('Content-Type', 'text/html; charset=UTF-8');

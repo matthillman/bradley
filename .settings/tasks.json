@@ -11,6 +11,10 @@
             "taskName": "bulid",
             "args": [],
             "isBuildCommand": true
+        },
+        {
+            "taskName": "publish",
+            "args": []
         }
     ]
 }

@@ -9,6 +9,11 @@ var ts = require('gulp-typescript');
 var sourcemaps = require('gulp-sourcemaps');
 var minifyCss = require('gulp-minify-css');
 var run = require('gulp-run');
+var sass = require('gulp-sass');
+var autoprefixer = require('gulp-autoprefixer');
+var gulpif = require('gulp-if');
+var streamqueue = require('streamqueue');
+var concat = require('gulp-concat');
 
 var tsconfig = ts.createProject('tsconfig.json', { sortOutput: true });
 
@@ -20,11 +25,30 @@ gulp.task('compile', function () {
 });
 
 gulp.task('minify-css', function () {
-	var stream = gulp.src(['node_modules/angular-material/angular-material.css', 'css/*.css']);
-	if (global.DEBUG) { stream.pipe(sourcemaps.init()); }
-	stream.pipe(minifyCss())
-	if (global.DEBUG) { stream.pipe(sourcemaps.write()); }
-	return stream.pipe(gulp.dest('dist/assets'));
+	var staticStream = gulp.src(['node_modules/angular-material/angular-material.css'])
+		.pipe(gulpif(!global.DEBUG, minifyCss()));
+
+	var scssStream = gulp.src(['app/scss/styles.scss'])
+		.pipe(sass({
+			sourceComments: global.DEBUG,
+			outputStyle: global.DEBUG ? 'expanded' : 'compressed'
+		}))
+		.pipe(autoprefixer({
+			browsers: [
+				'IE >= 10',
+				'Safari >= 8',
+				'last 2 Chrome versions',
+				'last 2 Firefox versions'
+			]
+		}));
+
+	return streamqueue({objectMode: true},
+			staticStream,
+			scssStream
+		)
+		.pipe(concat('styles.css'))
+		.on('error', gutil.log)
+		.pipe(gulp.dest('./dist/assets/'));
 });
 
 gulp.task('browserify', ['compile'], function () {
@@ -33,17 +57,15 @@ gulp.task('browserify', ['compile'], function () {
 		debug: global.DEBUG
 	});
 
-	var stream = b.bundle()
+	return b.bundle()
 		.pipe(source('main.js'))
 		.pipe(buffer())
-		.pipe(ngAnnotate());
-
-	if (global.DEBUG) { stream.pipe(sourcemaps.init({ loadMaps: true })); }
-	stream
-		.pipe(uglify())
+		.pipe(ngAnnotate())
+		.pipe(gulpif(global.DEBUG, sourcemaps.init({ loadMaps: true })))
+		.pipe(gulpif(!global.DEBUG, uglify()))
 		.on('error', gutil.log)
-	if (global.DEBUG) { stream.pipe(sourcemaps.write()); }
-	return stream.pipe(gulp.dest('./dist/'));
+		.pipe(gulpif(global.DEBUG, sourcemaps.write()))
+		.pipe(gulp.dest('./dist/'));
 });
 
 gulp.task('copy-source', ['browserify', 'minify-css'], function () {

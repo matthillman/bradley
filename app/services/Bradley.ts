@@ -3,12 +3,26 @@
 
 import angular = require('angular');
 
+import Menu = require('../directives/Menu');
+import MenuSection = Menu.MenuSection;
+import MenuPage = Menu.MenuPage;
+
 export interface BradleyService {
-	getBirthProgression(): angular.IPromise<BirthStage[]>
+	getStages(): angular.IPromise<Stage>;
+}
+
+export interface Stage {
+	stages: { [key: string]: BirthStage };
+	selectSection(section: MenuSection): void;
+	toggleSelectSection(section: MenuSection): void;
+	isSectionSelected(section: MenuSection): boolean;
+	selectPage(section: MenuSection, page: MenuPage): void;
+	isPageSelected(page:  MenuPage): boolean;
 }
 
 export interface BirthStage {
 	order: number;
+	url: string;
 	name: string;
 	emotionalSigns: string;
 	behavior: string;
@@ -24,17 +38,45 @@ interface HttpErrorResponseData {
 }
 
 // @ngInject
-export function BradleyServiceFactory($http: angular.IHttpService, $q: angular.IQService) {
+export function BradleyServiceFactory($http: angular.IHttpService, $q: angular.IQService): BradleyService {
+	var stages: { [key: string]: BirthStage } = {};
+	var openSection: MenuSection;
+	var currentPage:  MenuPage;
+	var currentSection: MenuSection;
+
 	return {
-		getBirthProgression: loadBirthStages
+		getStages: loadBirthStages
 	};
 
-	function loadBirthStages(): angular.IPromise<BirthStage[]> {
+	function loadBirthStages(): angular.IPromise<Stage> {
 		return $http.get('assets/bradley.json').then(onSuccess).catch(onError);
 	}
 
-	function onSuccess(response: angular.IHttpPromiseCallbackArg<BirthStage[]>): BirthStage[] {
-		return response.data;
+	function onSuccess(response: angular.IHttpPromiseCallbackArg<BirthStage[]>): Stage {
+		response.data.forEach(function(stage) {
+			stages[stage.url] = stage;
+		});
+		return {
+			stages: stages,
+
+			selectSection: function(section: MenuSection): void {
+				openSection = section;
+			},
+			toggleSelectSection: function(section: MenuSection): void {
+				openSection = (openSection === section ? null : section);
+			},
+			isSectionSelected: function(section: MenuSection): boolean {
+				return openSection === section;
+			},
+
+			selectPage: function(section: MenuSection, page:  MenuPage): void {
+				currentSection = section;
+				currentPage = page;
+			},
+			isPageSelected: function(page:  MenuPage): boolean {
+				return currentPage === page;
+			}
+		};
 	}
 
 	function onError(response: angular.IHttpPromiseCallbackArg<HttpErrorResponseData>): angular.IPromise<any> {
